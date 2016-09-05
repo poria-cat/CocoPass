@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Password extends Model
 {
     //
+
     protected $fillable = [
-        'password_name', 'user_name', 'password', 'website_url', 'remark', 'user_id',
+        'password_name', 'user_name', 'encrypt_password', 'website_url', 'remark', 'user_id',
     ];
     public function user()
     {
@@ -17,5 +18,13 @@ class Password extends Model
     public function tags()
     {
         return $this->hasMany(Tag::class);
+    }
+    public function getUserNameAttribute($value)
+    {
+        return \Crypt::decrypt($value);
+    }
+    public function getEncryptPasswordAttribute($value)
+    {
+        return \Crypt::decrypt($value);
     }
 }

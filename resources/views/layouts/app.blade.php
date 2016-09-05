@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <script src="/js/app.js"></script>
 
     <!-- Scripts -->
     <script>
@@ -108,8 +109,7 @@
 
     <!-- Scripts -->
     <script src="//cdn.bootcss.com/Han/3.3.0/han.min.js"></script>
-    <script src="/js/app.js"></script>
-    <script src="/js/strongpassword.js"></script>
+    {{--<script src="/js/strongpassword.js"></script>--}}
     <script src="/js/my_password.js"></script>
 
 </body>

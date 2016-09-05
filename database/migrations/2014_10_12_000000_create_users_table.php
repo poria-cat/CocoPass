@@ -18,6 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('google2fa_secret')->default("");
+            $table->string('encrypt_password')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

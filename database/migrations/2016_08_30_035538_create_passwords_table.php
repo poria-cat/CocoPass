@@ -20,7 +20,7 @@ class CreatePasswordsTable extends Migration
             //用户名
             $table->string('user_name');
             //密码
-            $table->string('password');
+            $table->string('encrypt_password');
             //网址
             $table->string('website_url');
             //备注
