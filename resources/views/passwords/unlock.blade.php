@@ -19,59 +19,9 @@
 
                 </form>
 
-                <form class="create_encrypt_password hidden">
-                    {{ csrf_field() }}
-                    <div class="form-group">
-                        <label class="control-label">加密和解密均要用到此密码，请务必记牢</label>
-                        <input type="text" id="my_encrypt_password" class="form-control " >
-                    </div>
-
-                    <button  class="btn  btn-block create_encrypt_password_btn" >创建</button>
-
-                </form>
 
             </div>
         </div>
     </div>
-    <script>
-        $.getJSON('/encrypt_status',function(data){
-            if(data.status==0){
-                $(".create_encrypt_password").removeClass('hidden')
-
-            }
-            else{
-                $(".unlock").removeClass('hidden')
-
-            }
-            console.log(data)
-        })
-        $(".create_encrypt_password_btn").click(function (e) {
-            e.preventDefault();
-            $.ajax({
-                type: "POST",
-                url: "/store_encrypt_password",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                data: {
-                    my_encrypt_password: $("#my_encrypt_password").val()
-                },
-                success: function (data) {
-                    if(data.status!==200){
-                        alert('创建失败')
-                    }else {
-
-                        alert("创建成功")
-
-                    }
-                },
-                error: function () {
-                    alert('创建失败')
-                }
-            })
-
-        })
-
-    </script>
 
 @endsection
