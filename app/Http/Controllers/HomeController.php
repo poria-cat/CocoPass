@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Password;
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -26,7 +27,15 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function welcome()
+    {
 
+        if (Auth::guest()){
+            return view('welcome');
+        }else{
+            return redirect('/home');
+        }
+    }
     public function index()
     {
         $user_id = \Auth::user()->id;
@@ -38,4 +47,5 @@ class HomeController extends Controller
     {
         return view('passwords.store_password');
     }
+
 }
