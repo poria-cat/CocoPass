@@ -39,7 +39,7 @@ class HomeController extends Controller
     public function index()
     {
         $user_id = \Auth::user()->id;
-        $passwords = Password::where('user_id',$user_id)->get();
+        $passwords = Password::where('user_id',$user_id)->paginate('15');
 
         return view('home',compact('passwords'));
     }

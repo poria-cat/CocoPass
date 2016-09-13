@@ -76,7 +76,7 @@
 
     <div class="content">
         <div class="title m-b-md">
-            欢迎来到MyPassword
+            欢迎来到CocoPass
         </div>
     </div>
 </div>

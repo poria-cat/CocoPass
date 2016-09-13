@@ -15,24 +15,24 @@
                 <form method="post" action="/store_password" accept-charset="UTF-8">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label class="control-label">名称</label>
+                        <label class="control-label">Name:</label>
                         <input type="text" name="my_password_name" class="form-control" >
                     </div>
 
                     <div class="form-group">
-                        <label  class="control-label">用户名:</label>
+                        <label  class="control-label">User Name:</label>
                         <input type="text" name="my_password_user_name" class="form-control" >
                     </div>
                     <div class="form-group">
-                        <label  class="control-label">密码:</label>
+                        <label  class="control-label">Password:</label>
                         <input type="password" name="my_password_password" class="form-control" >
                     </div>
                     <div class="form-group">
-                        <label  class="control-label">网址:</label>
+                        <label  class="control-label">Website Url:</label>
                         <input type="text" name="my_password_website_url" class="form-control" >
                     </div>
                     <div class="form-group">
-                        <label  class="control-label">备注:</label>
+                        <label  class="control-label">Remark:</label>
                         <input type="text" name="my_password_remark" class="form-control" >
                     </div>
 

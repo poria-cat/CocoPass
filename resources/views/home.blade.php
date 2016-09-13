@@ -4,41 +4,39 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">标签</div>
+                    <div class="panel-heading">Welcome to CocoPass</div>
 
                     <div class="panel-body">
-                        <span class="label label-default">标签</span>
+                        <p>You can store your passwords here</p>
                     </div>
                 </div>
                 <ul class="list-group" >
                     @foreach($passwords as $password)
                         <li class="list-group-item" >
-
                             {{$password->password_name}}
-
-                            {{--_{{$password->user_name}}w{{$password->encrypt_password}}--}}
                             <div class="dropdown pull-right">
                                 <button id="dLabel" class="btn btn-sm btn-primary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    复制
+                                    copy
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu " role="menu" aria-labelledby="dLabel">
-                                    <li class="clip-text" data-clipboard-text="{{$password->encrypt_password}}"><a href="javascript:void(0);">复制密码</a></li>
-                                    <li class="clip-text" data-clipboard-text="{{$password->user_name}}"><a href="javascript:void(0);">复制用户名</a></li>
-                                    <li ><a  class="edit_your_password" data-toggle="modal" data-target="#myModal"  data-id="{{$password->id}}" data-name="{{$password->password_name}}" data-username="{{$password->user_name}}" data-password="{{$password->encrypt_password}}" data-url="{{$password->website_url}}" data-remark="{{$password->remark}}">编辑</a></li>
+                                    <li class="clip-text" data-clipboard-text="{{$password->encrypt_password}}"><a href="javascript:void(0);">copy password</a></li>
+                                    <li class="clip-text" data-clipboard-text="{{$password->user_name}}"><a href="javascript:void(0);">copy username</a></li>
+                                    <li ><a  class="edit_your_password" data-toggle="modal" data-target="#myModal"  data-id="{{$password->id}}" data-name="{{$password->password_name}}" data-username="{{$password->user_name}}" data-password="{{$password->encrypt_password}}" data-url="{{$password->website_url}}" data-remark="{{$password->remark}}">edit</a></li>
                                 </ul>
                             </div>
                         </li>
-
                     @endforeach
+                    <div class="text-center">
+                        {{$passwords->links()}}
+                    </div>
                 </ul>
-                <!-- Modal -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                <h4 class="modal-title" id="myModalLabel">编辑</h4>
+                                <h4 class="modal-title" id="myModalLabel">edit</h4>
                             </div>
                             <div class="modal-body">
                                 <form method="post" action="/store_password" accept-charset="UTF-8">
@@ -47,35 +45,31 @@
                                     <input type="hidden" class="my_password_user_id">
 
                                     <div class="form-group">
-                                        <label class="control-label">名称</label>
+                                        <label class="control-label">Name</label>
                                         <input type="text" name="my_password_name" class="form-control my_password_name" >
                                     </div>
 
                                     <div class="form-group">
-                                        <label  class="control-label">用户名:</label>
+                                        <label  class="control-label">User Name:</label>
                                         <input type="text" name="my_password_user_name" class="form-control my_password_user_name" >
                                     </div>
                                     <div class="form-group">
-                                        <label  class="control-label">密码:</label>
+                                        <label  class="control-label">Password:</label>
                                         <input type="password" name="my_password_password" class="form-control my_password_password" >
                                     </div>
                                     <div class="form-group">
-                                        <label  class="control-label">网址:</label>
+                                        <label  class="control-label">Website Url:</label>
                                         <input type="text" name="my_password_website_url" class="form-control my_password_website_url" >
                                     </div>
                                     <div class="form-group">
-                                        <label  class="control-label">备注:</label>
+                                        <label  class="control-label">Remark:</label>
                                         <input type="text" name="my_password_remark" class="form-control my_password_remark" >
                                     </div>
-
-                                    {{--<input type="submit"  class="btn  btn-block" value="保存">--}}
-
                                 </form>
-
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary edit">Save changes</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>

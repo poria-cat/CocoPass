@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>MyPassword</title>
+    <title>CocoPass</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -36,7 +36,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    MyPassword
+                    CocoPass
                 </a>
             </div>
 
