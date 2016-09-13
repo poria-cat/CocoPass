@@ -20,6 +20,6 @@ Option 1:
  php artisan migrate
   ```
 ## Todo
-- [] use google2fa
-- [] use Vue.js
+-  use google2fa
+-  use Vue.js
 
