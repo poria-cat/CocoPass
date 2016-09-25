@@ -3,8 +3,7 @@
 
 CocoPass is a password management system based on Laravel5.3. You can safely and easily store your password here.
 If course, it is the first version.
-## Installation
-Option 1: 
+## Option 1: Installation
 
   ```bash
   composer install
